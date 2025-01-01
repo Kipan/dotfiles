@@ -1,20 +1,17 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
-command_timeout = 1000
-
-[battery]
-disabled = true
-
 [character]
-success_symbol = "[→](green bold)"
-error_symbol = "[×](red bold)"
-vimcmd_symbol = "[←](bold green)"
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[<](bold green)"
 
 [git_commit]
 tag_symbol = " tag "
 
 [git_status]
-deleted = "×"
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
 
 [aws]
 symbol = "aws "
@@ -26,7 +23,7 @@ symbol = "az "
 symbol = "bun "
 
 [c]
-symbol = "c "
+symbol = "C "
 
 [cobol]
 symbol = "cobol "
@@ -50,7 +47,7 @@ symbol = "dart "
 symbol = "deno "
 
 [dotnet]
-symbol = ".net "
+symbol = ".NET "
 
 [directory]
 read_only = " ro"
@@ -75,6 +72,9 @@ symbol = "gcp "
 
 [git_branch]
 symbol = "git "
+
+[gleam]
+symbol = "gleam "
 
 [golang]
 symbol = "go "
@@ -109,6 +109,9 @@ symbol = "memory "
 [meson]
 symbol = "meson "
 
+[nats]
+symbol = "nats "
+
 [nim]
 symbol = "nim "
 
@@ -122,7 +125,9 @@ symbol = "ml "
 symbol = "opa "
 
 [os.symbols]
+AIX = "aix "
 Alpaquita = "alq "
+AlmaLinux = "alma "
 Alpine = "alp "
 Amazon = "amz "
 Android = "andr "
@@ -139,6 +144,7 @@ Garuda = "garu "
 Gentoo = "gent "
 HardenedBSD = "hbsd "
 Illumos = "lum "
+Kali = "kali "
 Linux = "lnx "
 Mabox = "mbox "
 Macos = "mac "
@@ -157,11 +163,14 @@ Pop = "pop "
 Raspbian = "rasp "
 Redhat = "rhl "
 RedHatEnterprise = "rhel "
+RockyLinux = "rky "
 Redox = "redox "
 Solus = "sol "
 SUSE = "suse "
 Ubuntu = "ubnt "
+Ultramarine = "ultm "
 Unknown = "unk "
+Void = "void "
 Windows = "win "
 
 [package]
@@ -184,6 +193,9 @@ symbol = "purs "
 
 [python]
 symbol = "py "
+
+[quarto]
+symbol = "quarto "
 
 [raku]
 symbol = "raku "
@@ -211,6 +223,9 @@ symbol = "sudo "
 
 [swift]
 symbol = "swift "
+
+[typst]
+symbol = "typst "
 
 [terraform]
 symbol = "terraform "

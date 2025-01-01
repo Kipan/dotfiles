@@ -35,6 +35,12 @@ return require('packer').startup(function(use)
   use {
 	  "ray-x/lsp_signature.nvim",
   }
-
+  use({'nvim-tree/nvim-web-devicons'})
+  use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+          'nvim-tree/nvim-web-devicons', -- optional
+      },
+  }
 
 end)
