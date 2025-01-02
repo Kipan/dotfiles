@@ -25,4 +25,20 @@ require("nvim-tree").setup {
     ---
     on_attach = my_on_attach,
     ---
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true, -- Show diagnostics on directories as well
+        icons = {
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
+        },
+    },
+    git = {
+        enable = true,
+        ignore = true,
+        timeout = 500,
+    },
 }
+

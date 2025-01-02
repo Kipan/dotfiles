@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/nate/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
   },
+  ["melange-nvim"] = {
+    loaded = true,
+    path = "/home/nate/.local/share/nvim/site/pack/packer/start/melange-nvim",
+    url = "https://github.com/savq/melange-nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/nate/.local/share/nvim/site/pack/packer/start/nvim-cmp",
