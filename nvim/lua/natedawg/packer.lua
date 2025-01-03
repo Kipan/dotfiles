@@ -43,5 +43,20 @@ return require('packer').startup(function(use)
       },
   }
   use("savq/melange-nvim")
+  use ('mfussenegger/nvim-dap')
+  use ('mfussenegger/nvim-dap-python')
+  use("nvim-neotest/nvim-nio")
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+  use {
+    'nosduco/remote-sshfs.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim' },
+    config = function()
+      -- Place your configuration here, similar to `opts` in lazy.nvim
+      -- For example:
+      -- require('remote-sshfs').setup({
+      --   -- Your setup options here
+      -- })
+    end
+  }
 
 end)
