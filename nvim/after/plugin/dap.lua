@@ -16,9 +16,7 @@ end
 
 -- Configure nvim-dap-python with the path to the debugpy executable
 require('dap-python').setup('python3')  -- Adjust path if needed
-table.insert(require('dap').configurations.python, {
-    justMyCode = false,
-})
+
 
 -- You can map keys to start debugging or step through code
 vim.api.nvim_set_keymap('n', '<F5>', ':lua require"dap".continue()<CR>', { noremap = true, silent = true })
@@ -28,3 +26,25 @@ vim.api.nvim_set_keymap('n', '<F12>', ':lua require"dap".step_out()<CR>', { nore
 vim.api.nvim_set_keymap('n', '<leader>b', ':lua require"dap".toggle_breakpoint()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>B', ':lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ui', ':lua require"dapui".toggle()<CR>', { noremap = true, silent = true })
+
+table.insert(require('dap').configurations.python, {
+    {
+        justMyCode = false, -- <--- insert here
+        type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
+        request = 'launch',
+        name = 'launch file',
+        -- 此处指向当前文件
+        program = '${file}',
+        args = function()
+            local user_input = vim.fn.input('Enter arguments: ')  -- Prompt for input
+            return vim.split(user_input, ' ')  -- Split input into a table of arguments
+        end,
+        pythonPath = function()
+            local venv_path = os.getenv("CONDA_PREFIX")
+            if venv_path then
+                return venv_path .. "/bin/python"
+            end
+            return "/usr/bin/python3"
+        end
+    },
+})

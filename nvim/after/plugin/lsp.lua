@@ -44,6 +44,7 @@ require('lspconfig').clangd.setup({})
 require('lspconfig').pyright.setup({})
 
 local cmp = require('cmp')
+local luasnip = require("luasnip")
 
 cmp.setup {
   snippet = {
