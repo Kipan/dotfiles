@@ -67,5 +67,6 @@ return require('packer').startup(function(use)
   })
   use('Vimjas/vim-python-pep8-indent')
   use('nvim-treesitter/nvim-treesitter-context')
+  use 'm4xshen/autoclose.nvim'
 
 end)
