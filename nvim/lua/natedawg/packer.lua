@@ -65,5 +65,6 @@ return require('packer').startup(function(use)
       -- install jsregexp (optional!:).
       run = "make install_jsregexp"
   })
+  use('Vimjas/vim-python-pep8-indent')
 
 end)
