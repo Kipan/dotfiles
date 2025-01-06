@@ -66,5 +66,6 @@ return require('packer').startup(function(use)
       run = "make install_jsregexp"
   })
   use('Vimjas/vim-python-pep8-indent')
+  use('nvim-treesitter/nvim-treesitter-context')
 
 end)
