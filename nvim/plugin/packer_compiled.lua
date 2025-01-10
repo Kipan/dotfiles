@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/nathan/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?.lua;/home/nathan/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?/init.lua;/home/nathan/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?.lua;/home/nathan/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/nathan/.cache/nvim/packer_hererocks/2.1.1703358377/lib/lua/5.1/?.so"
+local package_path_str = "/home/nathan/.cache/nvim/packer_hererocks/2.1.1734355927/share/lua/5.1/?.lua;/home/nathan/.cache/nvim/packer_hererocks/2.1.1734355927/share/lua/5.1/?/init.lua;/home/nathan/.cache/nvim/packer_hererocks/2.1.1734355927/lib/luarocks/rocks-5.1/?.lua;/home/nathan/.cache/nvim/packer_hererocks/2.1.1734355927/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/nathan/.cache/nvim/packer_hererocks/2.1.1734355927/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -78,6 +78,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nathan/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["autoclose.nvim"] = {
+    loaded = true,
+    path = "/home/nathan/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
+    url = "https://github.com/m4xshen/autoclose.nvim"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -139,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/nathan/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/nathan/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/nathan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -185,6 +195,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nathan/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-python-pep8-indent"] = {
+    loaded = true,
+    path = "/home/nathan/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent",
+    url = "https://github.com/Vimjas/vim-python-pep8-indent"
   }
 }
 
