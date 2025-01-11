@@ -48,3 +48,28 @@ table.insert(require('dap').configurations.python, {
         end
     },
 })
+
+dap.adapters.c = {
+    id = 'cppdbg',
+    type = 'executable',
+    command = '/home/kali/.vscode/extensions/ms-vscode.cpptools-1.22.11-linux-x64/debugAdapters/bin/OpenDebugAD7',
+}
+
+local dap = require('dap')
+dap.configurations.c = {
+    {
+        name = "Launch file",
+        type = "c",
+        request = "launch",
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        args = function()
+            local user_input = vim.fn.input('Enter arguments: ')  -- Prompt for input
+            return vim.split(user_input, ' ')  -- Split input into a table of arguments
+        end,
+        cwd = '${workspaceFolder}',
+        stopAtEntry = true,
+    },
+}
+dap.configurations.cpp = dap.configurations.c
