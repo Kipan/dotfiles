@@ -1,13 +1,13 @@
 require('overseer').register_template({
-    name = "Compile C project (recursive)",
+    name = "Compile C project",
     builder = function(params)
-        -- Recursively find all .c files in the current directory and subdirectories
-        local files = vim.fn.globpath(".", "**/*.c", 0, 1)
+        -- Find all C source files in the current directory
+        local files = vim.fn.glob("*.c", 0, 1)
         return {
             cmd = "gcc",
             args = vim.tbl_flatten({
                 "-g",  -- Include debugging information
-                files, -- Add all .c files (including those in subdirectories)
+                files, -- Add all C source files
                 "-o", params.output, -- Specify output executable
             }),
             components = { "default" },
@@ -27,5 +27,5 @@ require('overseer').register_template({
 })
 
 vim.keymap.set("n", "<leader>cc", function()
-    require('overseer').run_template({ name = "Compile C project (recursive)" })
+    require('overseer').run_template({ name = "Compile C project" })
 end, { desc = "Run Compile C project with Overseer" })
