@@ -1,15 +1,13 @@
 require('overseer').register_template({
     name = "Compile C project",
     builder = function(params)
-        -- Find all C source files in the current directory
-        local files = vim.fn.glob("*.c", 0, 1)
+        -- Dynamically include all .c files in the current directory
+        local cwd = vim.fn.expand('%:p:h') -- Directory of the current file
+        local c_files = vim.fn.glob(cwd .. '/*.c', false, true) -- List of all .c files in the directory
+
         return {
             cmd = "gcc",
-            args = vim.tbl_flatten({
-                "-g",  -- Include debugging information
-                files, -- Add all C source files
-                "-o", params.output, -- Specify output executable
-            }),
+            args = vim.list_extend({ "-g", "-o", params.output }, c_files),
             components = { "default" },
         }
     end,
