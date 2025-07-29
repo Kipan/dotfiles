@@ -74,6 +74,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH=$PATH:/home/nathan/squashfs-root/usr/bin
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -102,6 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#alias abte="tmux a -t abte"
+alias dev="tmux a -t blocdev"
+alias gcm="git commit -m"
 
 eval "$(starship init zsh)"
 
@@ -111,14 +115,14 @@ export NVM_DIR="$HOME/.nvm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/nate/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/nathan/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/nate/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/nate/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/nathan/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/nathan/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/nate/anaconda3/bin:$PATH"
+        export PATH="/home/nathan/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -130,3 +134,8 @@ if [[ -n "$TMUX" ]] then
   export flavor='conda'
   source $HOME/.config/tmux/conda-inherit.sh
 fi
+#export PYENV_ROOT="$HOME/.pyenv"
+#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init - zsh)"
+#
+#export PATH="/home/nathan/.local/bin:$PATH"
