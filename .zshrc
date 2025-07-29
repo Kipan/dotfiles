@@ -105,6 +105,7 @@ export PATH=$PATH:/home/nathan/squashfs-root/usr/bin
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #alias abte="tmux a -t abte"
 alias dev="tmux a -t blocdev"
+alias gs="git status"
 alias gcm="git commit -m"
 
 eval "$(starship init zsh)"
