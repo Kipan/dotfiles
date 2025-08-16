@@ -15,10 +15,12 @@ return require('packer').startup(function(use)
 
   use({
 	  'rose-pine/neovim', as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
   })
+  use { "ellisonleao/gruvbox.nvim",
+      config = function()
+          vim.cmd('colorscheme gruvbox')
+      end
+  }
   use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
