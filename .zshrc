@@ -112,6 +112,7 @@ bindkey -s ^f "tmux-sessionizer.sh\n"
 alias dev="tmux a -t blocdev"
 alias gs="git status"
 alias gcm="git commit -m"
+alias c="clear"
 
 eval "$(starship init zsh)"
 
